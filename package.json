@@ -1,0 +1,5 @@
+{
+    "dependencies": {
+        "@finic/playwright": "^1.49.8-next"
+    }
+}

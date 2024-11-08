@@ -1,25 +1,11 @@
 from playwright.sync_api import sync_playwright, Page
-import json
-from dotenv import load_dotenv
-import os
-from bs4 import BeautifulSoup
-from typing import List, Optional
-from pydantic import BaseModel
-import json
-import platform
-from finic import Finic
-from typing import Dict, Any
+from finic_py import Finic
 
-API_KEY = os.getenv("API_KEY")
-BROWSER_CDP_URL = f"wss://browser-521298051240.us-central1.run.app/ws?api_key={API_KEY}&browser_id=test_browser"
+finic = Finic()
 
-@Finic.entrypoint
-def main(url: str):
-    finic_client = Finic()
-    
-    context = finic_client.launch_browser_sync(headless=False, slow_mo=500)
-        
-    page = context.new_page()
-    page.goto(url)
-
-    context.close()
+@finic.entrypoint
+def main(input_data: dict):
+    """Main function to run the automation"""
+    page, context = finic.launch_browser_sync(headless=False, slow_mo=500)
+if __name__ == "__main__":
+    main()

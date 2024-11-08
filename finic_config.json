@@ -1,0 +1,5 @@
+{
+    "agent_id": "web-automation",
+    "agent_name": "A web automation project",
+    "num_retries": 3
+}

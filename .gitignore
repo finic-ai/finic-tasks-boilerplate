@@ -7,3 +7,5 @@ input.json
 results.json
 storage_state.json
 /screenshots
+node_modules
+session_recording
